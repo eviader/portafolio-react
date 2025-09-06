@@ -1,0 +1,60 @@
+/*dividimos la pantalla en dos */
+
+.container-main{
+    display: grid;
+    width: 99%;
+    grid-template-rows: 10% 90% 20% 10%;
+    height: 100vh;
+}
+
+.navbar{
+    background-color: #000;
+    position: sticky;
+    top: 0;
+}
+.p-main{
+    
+}
+
+.container-avatar{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.container-avatar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad según necesites */
+    filter: blur(5px); /* Ajusta el radio del desenfoque según necesites */
+    mask-image: radial-gradient(circle, transparent 50%, black 100%);
+    /* O para un desenfoque lineal en un borde: mask-image: linear-gradient(to bottom, black 0%, transparent 100%); */
+  }
+
+.header-bigtext-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: fff;
+}
+
+.proyects-container{
+    position: relative;
+    background-color: fff;
+}
+
+.container-footer{
+    position: relative;
+    background-color: black;
+    
+}
+
+
