@@ -20,7 +20,7 @@ const BigtextHome = ({
   strokeColor = '#FF0000',
   className = '',
 
-  minFontSize = 20,
+  minFontSize = 10,
 
 }) => {
   const containerRef = useRef(null);

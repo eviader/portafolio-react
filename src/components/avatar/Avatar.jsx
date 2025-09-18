@@ -8,7 +8,9 @@ function Avatar() {
 
     return (
       <>
+          <div className="img-container">
             <img className="img-home-pefil" src={IMG_AVATAR} alt="img-avatar" />
+          </div>
       </>
     )
   }

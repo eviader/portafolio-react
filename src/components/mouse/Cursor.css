@@ -1,8 +1,8 @@
 .custom-cursor {
     position: absolute;
-    width: 7px; /* Define el tamaño del círculo */
-    height: 7px; /* Define el tamaño del círculo */
-    background-color: red; /* Define el color rojo */
+    width: 6px; /* Define el tamaño del círculo */
+    height: 6px; /* Define el tamaño del círculo */
+    background-color: #EB2800; /* Define el color rojo */
     border-radius: 50%; /* Le da forma de círculo */
     pointer-events: none; /* Permite interactuar con los elementos debajo del cursor */
     transform: translate(-50%, -50%); /* Centra el círculo en la punta del cursor */

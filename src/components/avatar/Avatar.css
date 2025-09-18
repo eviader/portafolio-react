@@ -1,8 +1,12 @@
+.img-container{
+    display: flex;
+    height: 110dvh;
+    z-index: 2;
+
+}
+
 .img-home-pefil{
     display: flex;
-    height: 100%;
-    width: auto;
-    z-index: -2;
     mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 909%, transparent 100%);
     
