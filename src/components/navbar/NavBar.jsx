@@ -5,7 +5,9 @@ function navBar(){
 
     return(
         <>
-            <nav className="main-nav"></nav>
+            <nav className="main-nav">
+
+            </nav>
         </>
     )
 }
