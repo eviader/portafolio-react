@@ -1,232 +1,202 @@
-import './BigTextHome.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText as GSAPSplitText } from 'gsap/SplitText';
+import { useGSAP } from '@gsap/react';
 
-const BigtextHome = ({
-  text = 'Emanuel Viader',
-  fontFamily = 'Compressa VF',
-  // This font is just an example, you should not use it in commercial projects.
-  fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP);
 
-  width = true,
-  weight = true,
-  italic = true,
-  alpha = false,
-
-  flex = true,
-  stroke = false,
-  scale = false,
-
-  textColor = '#000',
-  strokeColor = '#FF0000',
+const BigTextHome = ({
+  text,
   className = '',
-
-  minFontSize = 10,
-
+  delay = 100,
+  duration = 0.6,
+  ease = 'power3.out',
+  splitType = 'chars',
+  from = { opacity: 0, y: 40 },
+  to = { opacity: 1, y: 0 },
+  threshold = 0.1,
+  rootMargin = '-100px',
+  textAlign = 'center',
+  tag = 'p',
+  onLetterAnimationComplete
 }) => {
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
-  const spansRef = useRef([]);
-
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const cursorRef = useRef({ x: 0, y: 0 });
-
-  const [fontSize, setFontSize] = useState(minFontSize);
-  const [scaleY, setScaleY] = useState(1);
-  const [lineHeight, setLineHeight] = useState(1);
-
-  const chars = text.split('');
-
-  const dist = (a, b) => {
-    const dx = b.x - a.x;
-    const dy = b.y - a.y;
-    return Math.sqrt(dx * dx + dy * dy);
-  };
+  const ref = useRef(null);
+  const animationCompletedRef = useRef(false);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      cursorRef.current.x = e.clientX;
-      cursorRef.current.y = e.clientY;
-    };
-    const handleTouchMove = (e) => {
-      const t = e.touches[0];
-      cursorRef.current.x = t.clientX;
-      cursorRef.current.y = t.clientY;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
-
-    if (containerRef.current) {
-      const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-      mouseRef.current.x = left + width / 2;
-      mouseRef.current.y = top + height / 2;
-      cursorRef.current.x = mouseRef.current.x;
-      cursorRef.current.y = mouseRef.current.y;
+    if (document.fonts.status === 'loaded') {
+      setFontsLoaded(true);
+    } else {
+      document.fonts.ready.then(() => {
+        setFontsLoaded(true);
+      });
     }
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
   }, []);
 
-  const setSize = () => {
-    if (!containerRef.current || !titleRef.current) return;
+  useGSAP(
+    () => {
+      if (!ref.current || !text || !fontsLoaded) return;
+      const el = ref.current;
 
-    const { width: containerW, height: containerH } = containerRef.current.getBoundingClientRect();
-
-    let newFontSize = containerW / (chars.length / 2);
-    newFontSize = Math.max(newFontSize, minFontSize);
-
-    setFontSize(newFontSize);
-    setScaleY(1);
-    setLineHeight(1);
-
-    requestAnimationFrame(() => {
-      if (!titleRef.current) return;
-      const textRect = titleRef.current.getBoundingClientRect();
-
-      if (scale && textRect.height > 0) {
-        const yRatio = containerH / textRect.height;
-        setScaleY(yRatio);
-        setLineHeight(yRatio);
+      if (el._rbsplitInstance) {
+        try {
+          el._rbsplitInstance.revert();
+        } catch (_) {
+          /* noop */
+        }
+        el._rbsplitInstance = null;
       }
-    });
-  };
 
-  useEffect(() => {
-    setSize();
-    window.addEventListener('resize', setSize);
-    return () => window.removeEventListener('resize', setSize);
-    // eslint-disable-next-line
-  }, [scale, text]);
+      const startPct = (1 - threshold) * 100;
+      const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
+      const marginValue = marginMatch ? parseFloat(marginMatch[1]) : 0;
+      const marginUnit = marginMatch ? marginMatch[2] || 'px' : 'px';
+      const sign =
+        marginValue === 0
+          ? ''
+          : marginValue < 0
+            ? `-=${Math.abs(marginValue)}${marginUnit}`
+            : `+=${marginValue}${marginUnit}`;
+      const start = `top ${startPct}%${sign}`;
 
-  useEffect(() => {
-    let rafId;
-    const animate = () => {
-      mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
-      mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
+      let targets;
+      const assignTargets = self => {
+        if (splitType.includes('chars') && self.chars.length) targets = self.chars;
+        if (!targets && splitType.includes('words') && self.words.length) targets = self.words;
+        if (!targets && splitType.includes('lines') && self.lines.length) targets = self.lines;
+        if (!targets) targets = self.chars || self.words || self.lines;
+      };
 
-      if (titleRef.current) {
-        const titleRect = titleRef.current.getBoundingClientRect();
-        const maxDist = titleRect.width / 2;
+      const splitInstance = new GSAPSplitText(el, {
+        type: splitType,
+        smartWrap: true,
+        autoSplit: splitType === 'lines',
+        linesClass: 'split-line',
+        wordsClass: 'split-word',
+        charsClass: 'split-char',
+        reduceWhiteSpace: false,
+        onSplit: self => {
+          assignTargets(self);
+          const tween = gsap.fromTo(
+            targets,
+            { ...from },
+            {
+              ...to,
+              duration,
+              ease,
+              stagger: delay / 1000,
+              scrollTrigger: {
+                trigger: el,
+                start,
+                once: true,
+                fastScrollEnd: true,
+                anticipatePin: 0.4
+              },
+              onComplete: () => {
+                animationCompletedRef.current = true;
+                onLetterAnimationComplete?.();
+              },
+              willChange: 'transform, opacity',
+              force3D: true
+            }
+          );
+          return tween;
+        }
+      });
 
-        spansRef.current.forEach((span) => {
-          if (!span) return;
+      el._rbsplitInstance = splitInstance;
 
-          const rect = span.getBoundingClientRect();
-          const charCenter = {
-            x: rect.x + rect.width / 2,
-            y: rect.y + rect.height / 2,
-          };
-
-          const d = dist(mouseRef.current, charCenter);
-
-          const getAttr = (distance, minVal, maxVal) => {
-            const val = maxVal - Math.abs((maxVal * distance) / maxDist);
-            return Math.max(minVal, val + minVal);
-          };
-
-          const wdth = width ? Math.floor(getAttr(d, 5, 200)) : 100;
-          const wght = weight ? Math.floor(getAttr(d, 100, 900)) : 400;
-          const italVal = italic ? getAttr(d, 0, 1).toFixed(2) : 0;
-          const alphaVal = alpha ? getAttr(d, 0, 1).toFixed(2) : 1;
-
-          span.style.opacity = alphaVal;
-          span.style.fontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
+      return () => {
+        ScrollTrigger.getAll().forEach(st => {
+          if (st.trigger === el) st.kill();
         });
-      }
-
-      rafId = requestAnimationFrame(animate);
-    };
-
-    animate();
-    return () => cancelAnimationFrame(rafId);
-  }, [width, weight, italic, alpha, chars.length]);
-
-  const dynamicClassName = [className, flex ? 'flex' : '', stroke ? 'stroke' : '']
-    .filter(Boolean)
-    .join(' ');
-
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        position: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: '50dvh',
-        background: 'transparent',
-        overflow: 'hidden'
-      }}
-    >
-      <style>{`
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
+        try {
+          splitInstance.revert();
+        } catch (_) {
+          /* noop */
         }
-
-        .flex {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .stroke span {
-          position: relative;
-          color: ${textColor};
-        }
-        .stroke span::after {
-          content: attr(data-char);
-          position: absolute;
-          left: 0;
-          top: 0;
-          color: transparent;
-          z-index: -1;
-          -webkit-text-stroke-width: 3px;
-          -webkit-text-stroke-color: ${strokeColor};
-        }
-
-        .text-pressure-title {
-          color: ${textColor};
-        }
-      `}</style>
-
-      <h1
-        ref={titleRef}
-        className={`text-pressure-title ${dynamicClassName}`}
-        style={{
-          fontFamily,
-          textTransform: 'uppercase',
-          fontSize: fontSize,
-          lineHeight,
-          transform: `scale(1, ${scaleY})`,
-          transformOrigin: 'center top',
-          margin: 0,
-          textAlign: 'center',
-          userSelect: 'none',
-          whiteSpace: 'nowrap',
-          fontWeight: 100,
-          width: '100%',
-        }}
-      >
-        {chars.map((char, i) => (
-          <span
-            key={i}
-            ref={(el) => (spansRef.current[i] = el)}
-            data-char={char}
-            style={{
-              display: 'inline-block',
-              color: stroke ? undefined : textColor
-            }}
-          >
-            {char}
-          </span>
-        ))}
-      </h1>
-    </div>
+        el._rbsplitInstance = null;
+      };
+    },
+    {
+      dependencies: [
+        text,
+        delay,
+        duration,
+        ease,
+        splitType,
+        JSON.stringify(from),
+        JSON.stringify(to),
+        threshold,
+        rootMargin,
+        fontsLoaded,
+        onLetterAnimationComplete
+      ],
+      scope: ref
+    }
   );
+
+  const renderTag = () => {
+    const style = {
+      textAlign,
+      overflow: 'hidden',
+      display: 'inline-block',
+      whiteSpace: 'normal',
+      wordWrap: 'break-word',
+      willChange: 'transform, opacity',
+      fontSize: '6rem',
+      lineHeight: '1.0',
+      fontWeight: '500',
+    };
+    const classes = `split-parent ${className}`;
+    switch (tag) {
+      case 'h1':
+        return (
+          <h1 ref={ref} style={style} className={classes}>
+            {text}
+          </h1>
+        );
+      case 'h2':
+        return (
+          <h2 ref={ref} style={style} className={classes}>
+            {text}
+          </h2>
+        );
+      case 'h3':
+        return (
+          <h3 ref={ref} style={style} className={classes}>
+            {text}
+          </h3>
+        );
+      case 'h4':
+        return (
+          <h4 ref={ref} style={style} className={classes}>
+            {text}
+          </h4>
+        );
+      case 'h5':
+        return (
+          <h5 ref={ref} style={style} className={classes}>
+            {text}
+          </h5>
+        );
+      case 'h6':
+        return (
+          <h6 ref={ref} style={style} className={classes}>
+            {text}
+          </h6>
+        );
+      default:
+        return (
+          <p ref={ref} style={style} className={classes}>
+            {text}
+          </p>
+        );
+    }
+  };
+  return renderTag();
 };
 
-export default BigtextHome;
+export default BigTextHome;

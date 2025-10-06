@@ -20,11 +20,12 @@ function ContainerApp() {
     { label: 'LinkedIn', link: 'https://linkedin.com' }
   ];
 
+  const handleAnimationComplete = () => {
+          console.log('All letters have animated!');
+        };
+
   return (
     <>
-
-        
-
       <main className='container-main'> {/* maquetamos la web */}
       <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', background: 'transparent' }}>
           <StaggeredMenu
@@ -34,7 +35,7 @@ function ContainerApp() {
             displaySocials={true}
             displayItemNumbering={true}
             menuButtonColor="#fff"
-            openMenuButtonColor="#fff"
+            openMenuButtonColor="#000"
             changeMenuColorOnOpen={true}
             colors={['#EB2800', '#848283']}
             logoUrl=""
@@ -50,10 +51,25 @@ function ContainerApp() {
 
         <div className='container-avatar'>
           <Avatar />
+
+        <BigTextHome
+          text="HOLA, SOY EMA!"
+          className="text-2xl font-semibold text-center"
+          delay={100}
+          duration={0.6}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-300px"
+          textAlign="center"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
         </div>
 
         <section className='header-bigtext-img'>{/* creamos la seccion del header */}
-          <BigTextHome />
+          
         </section>
         
 
