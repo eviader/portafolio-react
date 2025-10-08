@@ -18,6 +18,7 @@ const BigTextHome = ({
   threshold = 0.1,
   rootMargin = '-100px',
   textAlign = 'center',
+  fontS,
   tag = 'p',
   onLetterAnimationComplete
 }) => {
@@ -146,10 +147,15 @@ const BigTextHome = ({
       whiteSpace: 'normal',
       wordWrap: 'break-word',
       willChange: 'transform, opacity',
-      fontSize: '6rem',
+      fontFamily: 'var(--font-display)',
+      fontSize: fontS,
+      margin: '15px',
       lineHeight: '1.0',
-      fontWeight: '500',
-    };
+      fontWeight: 'var(--font-bold)',
+      letterSpacing: '-0.02em',
+      position: 'relative',
+      zIndex: 7
+    }
     const classes = `split-parent ${className}`;
     switch (tag) {
       case 'h1':

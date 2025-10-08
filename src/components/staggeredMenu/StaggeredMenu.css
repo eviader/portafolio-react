@@ -3,14 +3,15 @@
     width: 100%;
     height: 100%;
     font-size: 25px;
-    z-index: 40;
+    z-index: 9;
   }
   
   .staggered-menu-header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 98%;
+    width: 97%;
+    height: 0%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,7 +47,8 @@
     border: none;
     cursor: pointer;
     color: #e9e9ef;
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-weight: var(--font-medium);
     line-height: 1;
     overflow: visible;
   }
@@ -178,8 +180,9 @@
   
   .sm-socials-title {
     margin: 0;
+    font-family: var(--font-display);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: var(--font-semibold);
     color: var(--sm-accent, #ff0000);
   }
   
@@ -220,8 +223,9 @@
   }
   
   .sm-socials-link {
+    font-family: var(--font-body);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: var(--font-medium);
     color: #111;
     text-decoration: none;
     position: relative;
@@ -256,11 +260,12 @@
   .sm-panel-item {
     position: relative;
     color: #000;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
     font-size: 3.5rem;
     cursor: pointer;
     line-height: 1;
-    letter-spacing: -2px;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
     transition:
       background 0.25s,

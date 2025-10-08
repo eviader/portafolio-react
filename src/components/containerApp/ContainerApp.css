@@ -7,7 +7,17 @@
     place-items: center;
     width: 100%;
     height: 100dvh;
-    
+    position: relative;
+}
+
+.metaballs-background {
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    top: 20%;
+    left: 0%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .navbar{
@@ -16,13 +26,17 @@
     height: 100%;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 .container-avatar{
     display: grid;
     grid-template-columns: 40% 60%;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    gap: 0;
+    max-width: 80%;
+    margin: 0 auto;
+    z-index: 11;
 }
 
 .header-bigtext-img{
@@ -34,11 +48,12 @@
     width: 45%;
     height: 75dvh;
     align-self: flex-end;
+    z-index: 9;
 }
 
 .proyects-container{
     position: relative;
-    background-color: fff;
+    background-color: #fff;
 }
 
 .container-footer{
