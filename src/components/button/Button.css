@@ -127,12 +127,24 @@
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - TABLET
+   RESPONSIVE DESIGN - TABLET (769px - 1024px)
    ======================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
   .custom-button {
-    padding: 1rem 2.3rem;
-    font-size: var(--text-base);
+    padding: 1.05rem 2.4rem;
+    font-size: 1rem;
+    min-height: 50px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET PORTRAIT (641px - 768px)
+   ======================================== */
+@media (max-width: 768px) and (min-width: 641px) {
+  .custom-button {
+    padding: 1rem 2.1rem;
+    font-size: 0.92rem;
+    min-height: 48px;
   }
 }
 
@@ -150,11 +162,36 @@
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - SMALL MOBILE
+   RESPONSIVE DESIGN - STANDARD SMARTPHONES (481px - 640px)
+   ======================================== */
+@media (max-width: 640px) and (min-width: 481px) {
+  .custom-button {
+    padding: 0.95rem 1.9rem;
+    font-size: 0.88rem;
+    min-height: 46px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE (480px)
    ======================================== */
 @media (max-width: 480px) {
   .custom-button {
-    padding: 0.95rem 1.8rem;
-    font-size: 0.85rem;
+    padding: 0.9rem 1.6rem;
+    font-size: 0.82rem;
+    min-height: 44px;
+    border-width: 2px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - VERY SMALL MOBILE (375px)
+   ======================================== */
+@media (max-width: 375px) {
+  .custom-button {
+    padding: 0.85rem 1.4rem;
+    font-size: 0.78rem;
+    min-height: 42px;
+    letter-spacing: 0.01em;
   }
 }

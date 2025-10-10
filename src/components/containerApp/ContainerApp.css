@@ -83,9 +83,9 @@
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - TABLET
+   RESPONSIVE DESIGN - TABLET (769px - 1024px)
    ======================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
     .container-main {
         grid-template-rows: 8% 92%;
         height: auto;
@@ -93,14 +93,15 @@
     }
 
     .container-avatar {
-        grid-template-columns: 45% 55%;
-        max-width: 90%;
-        gap: 1rem;
+        grid-template-columns: 42% 58%;
+        max-width: 88%;
+        gap: 1.5rem;
     }
 
     .metaballs-background {
-        width: 60%;
+        width: 55%;
         height: 70%;
+        opacity: 0.25;
     }
 
     .header-bigtext-img {
@@ -111,16 +112,68 @@
     /* Typography adjustments for tablet */
     .main-title {
         font-size: 4.5rem !important;
+        line-height: 1.1 !important;
     }
 
     .subtitle-text {
-        font-size: 0.9rem !important;
+        font-size: 1rem !important;
         max-width: 95%;
+        line-height: 1.5 !important;
     }
 
     .buttons-wrapper {
-        gap: 1.2rem;
-        margin-top: 1.5rem;
+        gap: 1.3rem;
+        margin-top: 1.8rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET PORTRAIT (641px - 768px)
+   ======================================== */
+@media (max-width: 768px) and (min-width: 641px) {
+    .container-main {
+        grid-template-rows: auto;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100dvh;
+        padding-bottom: 2rem;
+    }
+
+    .navbar {
+        position: fixed;
+        height: auto;
+        z-index: 50;
+    }
+
+    .container-avatar {
+        display: flex;
+        flex-direction: column;
+        max-width: 88%;
+        margin-top: 5.5rem;
+        gap: 1.25rem;
+    }
+
+    .metaballs-background {
+        width: 100%;
+        height: 60%;
+        top: 10%;
+        opacity: 0.2;
+    }
+
+    .main-title {
+        font-size: 3.2rem !important;
+        line-height: 1.15 !important;
+    }
+
+    .subtitle-text {
+        font-size: 0.95rem !important;
+        padding: 0 0.8rem;
+    }
+
+    .buttons-wrapper {
+        gap: 1.15rem;
+        margin-top: 1.6rem;
     }
 }
 
@@ -188,13 +241,84 @@
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - SMALL MOBILE
+   RESPONSIVE DESIGN - STANDARD SMARTPHONES (481px - 640px)
    ======================================== */
-@media (max-width: 480px) {
+@media (max-width: 640px) and (min-width: 481px) {
+    .container-main {
+        padding-bottom: 2rem;
+    }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 50;
+    }
+
     .container-avatar {
         max-width: 90%;
+        padding: 0 0.75rem;
+        margin-top: 5rem;
+        gap: 1rem;
+    }
+
+    .header-bigtext-img {
+        width: 95%;
+        height: 45dvh;
+    }
+
+    .metaballs-background {
+        opacity: 0.18;
+        height: 55%;
+    }
+
+    /* Typography adjustments for standard mobile */
+    .main-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .subtitle-text {
+        font-size: 0.88rem !important;
+        padding: 0 0.6rem;
+        line-height: 1.45 !important;
+    }
+
+    .subtitle-wrapper {
+        gap: 0.3rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .buttons-wrapper {
+        padding: 0 0.75rem;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .text-content-wrapper {
         padding: 0 0.5rem;
-        margin-top: 3rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE (480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .container-main {
+        padding-bottom: 1.5rem;
+    }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 50;
+    }
+
+    .container-avatar {
+        max-width: 92%;
+        padding: 0 0.5rem;
+        margin-top: 4.5rem;
+        gap: 0.75rem;
     }
 
     .header-bigtext-img {
@@ -202,17 +326,66 @@
         height: 40dvh;
     }
 
+    .metaballs-background {
+        opacity: 0.15;
+        height: 50%;
+    }
+
     /* Typography adjustments for small mobile */
     .main-title {
         font-size: 2.2rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .subtitle-text {
         font-size: 0.8rem !important;
         padding: 0 0.5rem;
+        line-height: 1.4 !important;
+    }
+
+    .subtitle-wrapper {
+        gap: 0.25rem;
+        margin-bottom: 0.5rem;
     }
 
     .buttons-wrapper {
         padding: 0 0.5rem;
+        gap: 0.85rem;
+        margin-top: 1.25rem;
+    }
+
+    .text-content-wrapper {
+        padding: 0 0.25rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - VERY SMALL MOBILE (375px)
+   ======================================== */
+@media (max-width: 375px) {
+    .container-avatar {
+        max-width: 94%;
+        padding: 0 0.35rem;
+        margin-top: 4rem;
+    }
+
+    .main-title {
+        font-size: 1.9rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .subtitle-text {
+        font-size: 0.75rem !important;
+        padding: 0 0.35rem;
+    }
+
+    .buttons-wrapper {
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .metaballs-background {
+        opacity: 0.1;
     }
 }

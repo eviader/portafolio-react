@@ -9,3 +9,17 @@
     z-index: 9999;
     transition: width 0.2s ease, height 0.2s ease;
   }
+
+  /* Ocultar cursor en dispositivos touch y móviles */
+  @media (hover: none) and (pointer: coarse) {
+    .custom-cursor {
+      display: none;
+    }
+  }
+
+  /* Ocultar cursor en pantallas móviles pequeñas */
+  @media (max-width: 768px) {
+    .custom-cursor {
+      display: none;
+    }
+  }
