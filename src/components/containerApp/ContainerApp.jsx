@@ -1,10 +1,10 @@
 import React from 'react';
-import img from "../../assets/react.svg"
+import img from "../../assets/logo-svg-ev.svg"
 import './ContainerApp.css'
 import BigTextHome from '../bigTextHome/BigTextHome';
 import Avatar from '../avatar/Avatar.jsx';
 import StaggeredMenu from '../staggeredMenu/StaggeredMenu.jsx';
-import MetaBalls from '../metaBalls/MetaBalls.jsx';
+import Button from '../button/Button.jsx';
 
 function ContainerApp() {
 
@@ -28,20 +28,6 @@ function ContainerApp() {
   return (
     <>
       <main className='container-main'> {/* maquetamos la web */}
-        <div className='metaballs-background'>
-          <MetaBalls
-            color="#4a90e2"
-            cursorBallColor="#6cb4ee"
-            ballCount={20}
-            speed={0.2}
-            animationSize={35}
-            clumpFactor={1.2}
-            cursorBallSize={3.5}
-            enableTransparency={true}
-            hoverSmoothness={0.05}
-          />
-        </div>
-
         <nav className='navbar'> {/* creamos el navbar */}
             <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', background: 'transparent' }}>
               <StaggeredMenu
@@ -50,7 +36,7 @@ function ContainerApp() {
                 socialItems={socialItems}
                 displaySocials={true}
                 displayItemNumbering={true}
-                menuButtonColor="#fff"
+                menuButtonColor="#DF3F1F"
                 openMenuButtonColor="#000"
                 changeMenuColorOnOpen={true}
                 colors={['#DF3F1F', '#848283']}
@@ -68,10 +54,10 @@ function ContainerApp() {
             <Avatar />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+          <div className="text-content-wrapper">
             <BigTextHome
               text="HOLA, SOY EMA!"
-              className="text-2xl font-semibold text-center"
+              className="main-title"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -86,37 +72,64 @@ function ContainerApp() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
 
-            <BigTextHome
-              text="Desarrollador front-end y diseñador UI/UX. Me apasiona crear experiencias digitales innovadoras y funcionales. Amante de la tecnología y el diseño."
-              className="text-2xl font-semibold text-center"
-              delay={30}
-              duration={0.4}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-200px"
-              fontS='0.95rem'
-              textAlign="center"
-              zIndex='8'
-              onLetterAnimationComplete={handleAnimationComplete}
-            />
+            <div className="subtitle-wrapper">
+              <BigTextHome
+                text="Desarrollador front-end y diseñador UI/UX. Me apasiona crear experiencias digitales innovadoras y funcionales."
+                className="subtitle-text"
+                delay={30}
+                duration={0.4}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-200px"
+                fontS='0.95rem'
+                textAlign="center"
+                zIndex='8'
+                margin='5px'
+                onLetterAnimationComplete={handleAnimationComplete}
+              />
+              <BigTextHome
+                text="Amante de la tecnología y el diseño."
+                className="subtitle-text"
+                delay={30}
+                duration={0.4}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-200px"
+                fontS='0.95rem'
+                textAlign="center"
+                zIndex='8'
+                margin='5px'
+                onLetterAnimationComplete={handleAnimationComplete}
+              />
+            </div>
+
+            <div className="buttons-wrapper">
+              <Button
+                text="Proyectos"
+                variant="primary"
+                onClick={() => console.log('Proyectos clicked')}
+              />
+              <Button
+                text="Contactarme"
+                variant="secondary"
+                onClick={() => console.log('Contactarme clicked')}
+              />
+            </div>
           </div>
 
         </div>
 
-        <section className='header-bigtext-img'>{/* creamos la seccion del header */}
-          
+     {/*<section className='header-bigtext-img'>
         </section>
-        
-
-        <section>
-          
-        </section>
-        <section className='proyects-container'>{/* creamos la seccion de los proyectos */}
-
-        </section>
+  
+        <section className='proyects-container'>
+        </section>*/}
 
         <footer className='container-footer'>{/* creamos la seccion del footer */}
 

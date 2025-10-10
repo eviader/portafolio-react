@@ -2,13 +2,59 @@
     display: flex;
     height: 110dvh;
     z-index: 2;
-
-
+    justify-content: center;
+    align-items: center;
 }
 
 .img-home-pefil{
     display: flex;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     z-index: 9999;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET
+   ======================================== */
+@media (max-width: 1024px) {
+    .img-container {
+        height: 90dvh;
+    }
+
+    .img-home-pefil {
+        max-height: 85dvh;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+@media (max-width: 768px) {
+    .img-container {
+        height: 60dvh;
+        max-height: 500px;
+    }
+
+    .img-home-pefil {
+        max-height: 55dvh;
+        max-width: 90%;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   ======================================== */
+@media (max-width: 480px) {
+    .img-container {
+        height: 50dvh;
+        max-height: 400px;
+    }
+
+    .img-home-pefil {
+        max-height: 45dvh;
+        max-width: 100%;
+    }
 }

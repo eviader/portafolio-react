@@ -20,6 +20,7 @@ const BigTextHome = ({
   textAlign = 'center',
   fontS,
   tag = 'p',
+  margin = '15px',
   onLetterAnimationComplete
 }) => {
   const ref = useRef(null);
@@ -149,7 +150,7 @@ const BigTextHome = ({
       willChange: 'transform, opacity',
       fontFamily: 'var(--font-display)',
       fontSize: fontS,
-      margin: '15px',
+      margin: margin,
       lineHeight: '1.0',
       fontWeight: 'var(--font-bold)',
       letterSpacing: '-0.02em',
