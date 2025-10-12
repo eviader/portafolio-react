@@ -74,24 +74,7 @@ function ContainerApp() {
 
             <div className="subtitle-wrapper">
               <BigTextHome
-                text="Desarrollador front-end y diseñador UI/UX. Me apasiona crear experiencias digitales innovadoras y funcionales."
-                className="subtitle-text"
-                delay={30}
-                duration={0.4}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-200px"
-                fontS='0.95rem'
-                textAlign="center"
-                zIndex='8'
-                margin='5px'
-                onLetterAnimationComplete={handleAnimationComplete}
-              />
-              <BigTextHome
-                text="Amante de la tecnología y el diseño."
+                text="Desarrollador front-end y diseñador UI/UX. Me apasiona crear experiencias digitales innovadoras y funcionales. Amante de la tecnología y el diseño."
                 className="subtitle-text"
                 delay={30}
                 duration={0.4}

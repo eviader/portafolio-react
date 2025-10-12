@@ -73,6 +73,11 @@
     flex-direction: column;
     gap: 0px;
     align-items: center;
+    max-width: 90%;
+}
+
+.subtitle-text {
+    line-height: 1.6 !important;
 }
 
 .buttons-wrapper {
@@ -115,10 +120,13 @@
         line-height: 1.1 !important;
     }
 
+    .subtitle-wrapper {
+        max-width: 95%;
+    }
+
     .subtitle-text {
         font-size: 1rem !important;
-        max-width: 95%;
-        line-height: 1.5 !important;
+        line-height: 1.6 !important;
     }
 
     .buttons-wrapper {
@@ -166,9 +174,14 @@
         line-height: 1.15 !important;
     }
 
+    .subtitle-wrapper {
+        max-width: 100%;
+    }
+
     .subtitle-text {
         font-size: 0.95rem !important;
         padding: 0 0.8rem;
+        line-height: 1.6 !important;
     }
 
     .buttons-wrapper {
@@ -221,10 +234,14 @@
         line-height: 1.1 !important;
     }
 
+    .subtitle-wrapper {
+        max-width: 100%;
+    }
+
     .subtitle-text {
         font-size: 0.85rem !important;
-        max-width: 100%;
         padding: 0 1rem;
+        line-height: 1.6 !important;
     }
 
     .text-content-wrapper {
@@ -278,15 +295,16 @@
         margin-bottom: 0.6rem !important;
     }
 
+    .subtitle-wrapper {
+        max-width: 100%;
+        gap: 0;
+        margin-bottom: 0.6rem;
+    }
+
     .subtitle-text {
         font-size: 0.88rem !important;
         padding: 0 0.6rem;
-        line-height: 1.45 !important;
-    }
-
-    .subtitle-wrapper {
-        gap: 0.3rem;
-        margin-bottom: 0.6rem;
+        line-height: 1.6 !important;
     }
 
     .buttons-wrapper {
@@ -306,6 +324,7 @@
 @media (max-width: 480px) {
     .container-main {
         padding-bottom: 1.5rem;
+        
     }
 
     .navbar {
@@ -338,15 +357,20 @@
         margin-bottom: 0.5rem !important;
     }
 
+    .subtitle-wrapper {
+        max-width: 100%;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
     .subtitle-text {
         font-size: 0.8rem !important;
         padding: 0 0.5rem;
-        line-height: 1.4 !important;
+        line-height: 1.55 !important;
     }
 
-    .subtitle-wrapper {
-        gap: 0.25rem;
-        margin-bottom: 0.5rem;
+    .split-parent{
+        margin: -5px;
     }
 
     .buttons-wrapper {
@@ -375,9 +399,14 @@
         margin-bottom: 0.4rem !important;
     }
 
+    .subtitle-wrapper {
+        max-width: 100%;
+    }
+
     .subtitle-text {
         font-size: 0.75rem !important;
         padding: 0 0.35rem;
+        line-height: 1.5 !important;
     }
 
     .buttons-wrapper {
