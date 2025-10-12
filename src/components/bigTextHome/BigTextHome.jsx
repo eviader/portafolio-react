@@ -15,7 +15,7 @@ const BigTextHome = ({
   splitType = 'chars',
   from = { opacity: 0, y: 40 },
   to = { opacity: 1, y: 0 },
-  threshold = 0.1,
+  threshold = 0,
   rootMargin = '-100px',
   textAlign = 'center',
   fontS,
