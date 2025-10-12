@@ -64,7 +64,7 @@ function ContainerApp() {
               splitType="chars"
               from={{ opacity: 0, y: 40 }}
               to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
+              threshold={0}
               rootMargin="-300px"
               fontS= '6rem'
               textAlign="center"
@@ -82,7 +82,7 @@ function ContainerApp() {
                 splitType="chars"
                 from={{ opacity: 0, y: 40 }}
                 to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
+                threshold={0}
                 rootMargin="-200px"
                 fontS='0.95rem'
                 textAlign="center"
