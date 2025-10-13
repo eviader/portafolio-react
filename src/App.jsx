@@ -1,6 +1,7 @@
 import ContainerApp from './components/containerApp/ContainerApp.jsx'
 import ClickSpark from '../src/components/cliclSpark/ClickSpark.jsx';
 import MetaBalls from './components/metaBalls/MetaBalls.jsx';
+import Projects from './pages/projects/Projects.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 
@@ -33,6 +34,17 @@ function App() {
           duration={400}
           >
           <ContainerApp />
+          </ClickSpark>
+        } />
+        <Route path='/projects' element={
+          <ClickSpark
+          sparkColor='#EB2800'
+          sparkSize={8}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+          >
+          <Projects />
           </ClickSpark>
         } />
         </Routes>

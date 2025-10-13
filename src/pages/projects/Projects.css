@@ -1,0 +1,187 @@
+/* src/pages/Projects/Projects.css */
+
+/* Sección de Proyectos */
+.projects-section {
+    padding: 80px 20px; /* Ajusta el padding según sea necesario */
+    background-color: #f8f8f8; /* Un color de fondo suave para la sección */
+    text-align: center; /* Centrar el título de la sección */
+}
+
+.section-title {
+    font-size: 2.5em; /* Ajusta el tamaño de la fuente para que coincida con tu h1 */
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 60px; /* Espacio debajo del título */
+    /* Asegúrate de que la font-family aquí sea la misma que en tu h1 principal */
+    font-family: 'YourMainFont', sans-serif; /* REEMPLAZA ESTO con tu fuente principal */
+    font-weight: 700; /* Asumiendo que tu título principal es negrita */
+}
+
+/* Grilla de Proyectos */
+.projects-grid {
+    display: grid;
+    /* Esto crea columnas que se ajustan automáticamente.
+       Cada columna tendrá un mínimo de 300px y se expandirá hasta ocupar 1 fracción del espacio disponible. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Ancho máximo de la grilla */
+    margin: 0 auto; /* Centrar la grilla */
+    padding: 0 20px; /* Pequeño padding lateral para la grilla en pantallas grandes */
+}
+
+/* Estilos de la Tarjeta de Proyecto */
+.project-card {
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para efectos de hover */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes de proyecto */
+    object-fit: cover; /* Recorta la imagen para que cubra el área sin distorsión */
+    border-top-left-radius: 12px; /* Bordes redondeados solo en la parte superior */
+    border-top-right-radius: 12px;
+}
+
+.project-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el contenido se expanda y empuje los botones hacia abajo */
+    text-align: left; /* Alinear el texto a la izquierda dentro de la tarjeta */
+}
+
+.project-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'YourMainFont', sans-serif; /* REEMPLAZA ESTO con tu fuente principal */
+    font-weight: 600; /* Seminegrita */
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio disponible y alinee los botones */
+}
+
+/* Etiquetas de Tecnología */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las etiquetas pasen a la siguiente línea si no caben */
+    gap: 8px; /* Espacio entre las etiquetas */
+    margin-bottom: 25px;
+    align-items: center; /* Alinea las etiquetas verticalmente si tienen diferentes alturas */
+}
+
+.tag {
+    background-color: #eee; /* Fondo gris claro para las etiquetas */
+    color: #555; /* Texto oscuro para las etiquetas */
+    padding: 6px 12px;
+    border-radius: 20px; /* Bordes muy redondeados para parecer "píldoras" */
+    font-size: 0.8em;
+    font-weight: 500;
+    white-space: nowrap; /* Evita que el texto de la etiqueta se rompa */
+}
+
+/* Botones de Llamada a la Acción */
+.project-ctas {
+    margin-top: auto; /* Empuja los botones al final de la tarjeta, gracias a flex-grow en project-info */
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    flex-wrap: wrap; /* Permite que los botones se ajusten en móviles */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px; /* Bordes muy redondeados para los botones */
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border: none; /* Elimina el borde predeterminado */
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.primary-button {
+    background-color: #ff4500; /* Color naranja/rojo como en tu home */
+    color: #fff;
+}
+
+.primary-button:hover {
+    background-color: #cc3700; /* Un rojo más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background-color: transparent; /* Fondo transparente */
+    color: #ff4500; /* Texto naranja/rojo */
+    border: 2px solid #ff4500; /* Borde del mismo color */
+}
+
+.secondary-button:hover {
+    background-color: #ff4500; /* Fondo naranja/rojo */
+    color: #fff; /* Texto blanco */
+    transform: translateY(-2px);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 30px;
+    }
+
+    .project-card {
+        margin: 0 10px; /* Pequeño margen lateral para que no se peguen a los bordes */
+    }
+
+    .project-ctas {
+        justify-content: center; /* Centrar botones en móviles si hay espacio */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-title {
+        font-size: 1.3em;
+    }
+
+    .project-description {
+        font-size: 0.9em;
+    }
+
+    .button {
+        width: 100%; /* Botones de ancho completo en pantallas muy pequeñas */
+        text-align: center;
+        margin-bottom: 10px; /* Espacio entre los botones apilados */
+    }
+
+    .project-ctas {
+        flex-direction: column; /* Apilar botones verticalmente */
+        gap: 0; /* Elimina el gap cuando están apilados */
+    }
+}

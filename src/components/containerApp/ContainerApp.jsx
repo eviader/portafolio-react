@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import img from "../../assets/logo-svg-ev.svg"
 import './ContainerApp.css'
 import BigTextHome from '../bigTextHome/BigTextHome';
@@ -7,10 +8,12 @@ import StaggeredMenu from '../staggeredMenu/StaggeredMenu.jsx';
 import Button from '../button/Button.jsx';
 
 function ContainerApp() {
+  const navigate = useNavigate();
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
+    { label: 'Projects', ariaLabel: 'View my projects', link: '/projects' },
     { label: 'Services', ariaLabel: 'View our services', link: '/services' },
     { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
   ];
@@ -76,8 +79,8 @@ function ContainerApp() {
               <BigTextHome
                 text="Desarrollador front-end y diseñador UI/UX. Me apasiona crear experiencias digitales innovadoras y funcionales. Amante de la tecnología y el diseño."
                 className="subtitle-text"
-                delay={30}
-                duration={0.4}
+                delay={40}
+                duration={0.3}
                 ease="power3.out"
                 splitType="chars"
                 from={{ opacity: 0, y: 40 }}
@@ -96,7 +99,7 @@ function ContainerApp() {
               <Button
                 text="Proyectos"
                 variant="primary"
-                onClick={() => console.log('Proyectos clicked')}
+                onClick={() => navigate('/projects')}
               />
               <Button
                 text="Contactarme"
