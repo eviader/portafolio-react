@@ -4,25 +4,13 @@ import img from "../../assets/logo-svg-ev.svg"
 import './ContainerApp.css'
 import BigTextHome from '../bigTextHome/BigTextHome';
 import Avatar from '../avatar/Avatar.jsx';
-import StaggeredMenu from '../staggeredMenu/StaggeredMenu.jsx';
+import PillNav from '../pillNav/PillNav'
+
+
 import Button from '../button/Button.jsx';
 
 function ContainerApp() {
-  const navigate = useNavigate();
-
-  const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-    { label: 'Projects', ariaLabel: 'View my projects', link: '/projects' },
-    { label: 'Services', ariaLabel: 'View our services', link: '/services' },
-    { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
-  ];
-  
-  const socialItems = [
-    { label: 'Twitter', link: 'https://twitter.com' },
-    { label: 'GitHub', link: 'https://github.com' },
-    { label: 'LinkedIn', link: 'https://linkedin.com' }
-  ];
+  const navigate = useNavigate();;
 
   const handleAnimationComplete = () => {
           console.log('All letters have animated!');
@@ -31,28 +19,28 @@ function ContainerApp() {
   return (
     <>
       <main className='container-main'> {/* maquetamos la web */}
+        
         <nav className='navbar'> {/* creamos el navbar */}
-            <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', background: 'transparent' }}>
-              <StaggeredMenu
-                position="right"
-                items={menuItems}
-                socialItems={socialItems}
-                displaySocials={true}
-                displayItemNumbering={true}
-                menuButtonColor="#DF3F1F"
-                openMenuButtonColor="#000"
-                changeMenuColorOnOpen={true}
-                colors={['#DF3F1F', '#848283']}
-                logoUrl={img}
-                accentColor="#DF3F1F"
-                onMenuOpen={() => console.log('Menu opened')}
-                onMenuClose={() => console.log('Menu closed')}
-              />
-            </div>
+            <PillNav
+              logo={img}
+              logoAlt="Company Logo"
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'About', href: '/about' },
+                { label: 'Projects', href: '/projects' },
+                { label: 'Contact', href: '/contact' }
+              ]}
+              activeHref="/"
+              className="custom-nav"
+              ease="power2.easeOut"
+              baseColor="transparent"
+              pillColor="transparent"
+              hoveredPillTextColor="#DF3F1F"
+              pillTextColor="#000000"
+            />
         </nav>
 
         <div className='container-avatar'>
-
           <div>
             <Avatar />
           </div>
@@ -99,11 +87,13 @@ function ContainerApp() {
               <Button
                 text="Proyectos"
                 variant="primary"
+                customPadding= "1rem 2.5rem"
                 onClick={() => navigate('/projects')}
               />
               <Button
                 text="Contactarme"
                 variant="secondary"
+                customPadding= "1rem 2.5rem"
                 onClick={() => console.log('Contactarme clicked')}
               />
             </div>

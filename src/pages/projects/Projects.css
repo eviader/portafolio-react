@@ -3,13 +3,13 @@
 /* Sección de Proyectos */
 .projects-section {
     padding: 80px 20px; /* Ajusta el padding según sea necesario */
-    background-color: #f8f8f8; /* Un color de fondo suave para la sección */
     text-align: center; /* Centrar el título de la sección */
+    z-index: 11;
 }
 
 .section-title {
     font-size: 2.5em; /* Ajusta el tamaño de la fuente para que coincida con tu h1 */
-    color: #333; /* Color de texto oscuro */
+    color: #000; /* Color de texto oscuro */
     margin-bottom: 60px; /* Espacio debajo del título */
     /* Asegúrate de que la font-family aquí sea la misma que en tu h1 principal */
     font-family: 'YourMainFont', sans-serif; /* REEMPLAZA ESTO con tu fuente principal */
@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column; /* Organiza el contenido verticalmente */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para efectos de hover */
+    z-index: 11;
 }
 
 .project-card:hover {
@@ -98,11 +99,11 @@
 
 /* Botones de Llamada a la Acción */
 .project-ctas {
-    margin-top: auto; /* Empuja los botones al final de la tarjeta, gracias a flex-grow en project-info */
+    margin: 0; /* Empuja los botones al final de la tarjeta, gracias a flex-grow en project-info */
     display: flex;
     gap: 15px; /* Espacio entre los botones */
-    justify-content: flex-start; /* Alinea los botones a la izquierda */
-    flex-wrap: wrap; /* Permite que los botones se ajusten en móviles */
+    justify-content: center; /* Alinea los botones a la izquierda */
+     /* Permite que los botones se ajusten en móviles */
 }
 
 .button {
@@ -182,6 +183,11 @@
 
     .project-ctas {
         flex-direction: column; /* Apilar botones verticalmente */
-        gap: 0; /* Elimina el gap cuando están apilados */
+        gap: 5px; /* Elimina el gap cuando están apilados */
     }
+
+
+
 }
+
+

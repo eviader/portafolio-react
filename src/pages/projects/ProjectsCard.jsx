@@ -1,6 +1,7 @@
 
 import React from 'react';
-import './Projects.css'; // Podemos usar los mismos estilos
+import './Projects.css';
+import Button from '../../components/button/Button';
 
 const ProjectCard = ({ title, description, imageUrl, tags, liveUrl, sourceUrl }) => {
   return (
@@ -15,8 +16,18 @@ const ProjectCard = ({ title, description, imageUrl, tags, liveUrl, sourceUrl })
           ))}
         </div>
         <div className="project-ctas">
-          <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="button primary-button">Ver Sitio</a>
-          <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="button secondary-button">Código Fuente</a>
+          <Button
+                text="Ver Proyecto"
+                variant="primary"
+                customPadding= "10px 10px"
+                onClick={() => navigate('/projects')}
+              />
+          <Button
+                text="Código GitHub"
+                variant="secondary"
+                customPadding= "10px 10px"
+                onClick={() => navigate('/projects')}
+              />
         </div>
       </div>
     </div>

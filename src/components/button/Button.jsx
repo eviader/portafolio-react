@@ -3,6 +3,7 @@ import './Button.css';
 const Button = ({
   text,
   variant = 'primary',
+  customPadding,
   onClick,
   href,
   className = ''
@@ -24,6 +25,7 @@ const Button = ({
 
   return (
     <button
+      style={{ padding: customPadding }}
       className={buttonClass}
       onClick={onClick}
     >
