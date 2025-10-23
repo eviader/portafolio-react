@@ -1,7 +1,9 @@
 
 import React from 'react';
 import './Projects.css';
+import { Link } from 'react-router-dom';
 import Button from '../../components/button/Button';
+
 
 const ProjectCard = ({ title, description, imageUrl, tags, liveUrl, sourceUrl }) => {
   return (
@@ -20,13 +22,13 @@ const ProjectCard = ({ title, description, imageUrl, tags, liveUrl, sourceUrl })
                 text="Ver Proyecto"
                 variant="primary"
                 customPadding= "10px 10px"
-                onClick={() => navigate('/projects')}
+                onClick={() => window.open(`https://${liveUrl}`, '_blank')}
               />
           <Button
                 text="Código GitHub"
                 variant="secondary"
                 customPadding= "10px 10px"
-                onClick={() => navigate('/projects')}
+                onClick={() => window.open(`https://${sourceUrl}`, '_blank')}
               />
         </div>
       </div>

@@ -16,10 +16,10 @@ const Projects = () => {
               logo={img}
               logoAlt="Company Logo"
               items={[
-                { label: 'Home', href: '/' },
-                { label: 'About', href: '/about' },
-                { label: 'Projects', href: '/services' },
-                { label: 'Contact', href: '/contact' }
+               { label: 'Inicio', href: '/' },
+                { label: 'Sobre mí', href: '/about' },
+                { label: 'Proyectos', href: '/projects' },
+                { label: 'Contacto', href: '/contact' }
               ]}
               activeHref="/"
               className="custom-nav"

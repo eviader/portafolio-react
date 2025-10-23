@@ -25,10 +25,10 @@ function ContainerApp() {
               logo={img}
               logoAlt="Company Logo"
               items={[
-                { label: 'Home', href: '/' },
-                { label: 'About', href: '/about' },
-                { label: 'Projects', href: '/projects' },
-                { label: 'Contact', href: '/contact' }
+                { label: 'Inicio', href: '/' },
+                { label: 'Sobre mí', href: '/about' },
+                { label: 'Proyectos', href: '/projects' },
+                { label: 'Contacto', href: '/contact' }
               ]}
               activeHref="/"
               className="custom-nav"
@@ -67,8 +67,8 @@ function ContainerApp() {
               <BigTextHome
                 text="Desarrollador front-end y diseñador UI/UX. Me apasiona crear experiencias digitales innovadoras y funcionales. Amante de la tecnología y el diseño."
                 className="subtitle-text"
-                delay={40}
-                duration={0.3}
+                delay={15}
+                duration={0.4}
                 ease="power3.out"
                 splitType="chars"
                 from={{ opacity: 0, y: 40 }}

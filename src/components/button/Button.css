@@ -59,8 +59,8 @@
 }
 
 .custom-button--primary:hover .custom-button__hover-effect {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
 }
 
 /* Secondary variant (Contactarme) */
@@ -85,8 +85,8 @@
 }
 
 .custom-button--secondary:hover .custom-button__hover-effect {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
 }
 
 /* Active state for click */
@@ -111,8 +111,8 @@
   }
 
   .custom-button:active .custom-button__hover-effect {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
   }
 
   .custom-button--primary:active .custom-button__text {
