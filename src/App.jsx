@@ -3,6 +3,7 @@ import ClickSpark from './components/mouse/cliclSpark/ClickSpark.jsx';
 import MetaBalls from './components/metaBalls/MetaBalls.jsx';
 import Projects from './pages/projects/Projects.jsx';
 import About from './pages/about/About.jsx';
+import Contact from './pages/contact/Contact.jsx';  
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 
@@ -59,7 +60,19 @@ function App() {
           <Projects />
           </ClickSpark>
         } />
+        <Route path='/contact' element={
+          <ClickSpark
+          sparkColor='#EB2800'
+          sparkSize={8}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+          >
+          <Contact />
+          </ClickSpark>
+        } />
         </Routes>
+        
       </BrowserRouter>
 
     </>

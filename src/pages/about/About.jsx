@@ -1,6 +1,6 @@
 import './About.css';
 import PillNav from '../../components/pillNav/PillNav';
-import img from '../../assets/logo-svg-ev.svg'; // Asegúrate de tener un logo en esta ruta
+import img from '../../assets/logo-svg-ev.svg'; 
 import emaProfilePic from '../../assets/perfil-about.webp';
 
 const About = () => {
@@ -47,7 +47,7 @@ const About = () => {
           {/* Columna Izquierda: Imagen y Breve Declaración */}
           <div className="about-image-content">
             <img src={emaProfilePic} alt="Ema Profile" className="profile-pic" />
-            <h3 className="about-statement">¡Apasionada por el diseño y el código!</h3>
+            <h3 className="about-statement">¡Un junior con ganas de darlo todo!</h3>
           </div>
 
           {/* Columna Derecha: Texto Principal y Habilidades */}
@@ -80,7 +80,7 @@ const About = () => {
 
             <h3>Más Allá del Código</h3>
             <p>
-              Fuera de la pantalla, me encanta aprender nuevos idiomas, la fotografía y el senderismo. Siempre estoy en busca de nuevas fuentes de inspiración y desafíos, tanto en la vida como en el desarrollo.
+              Fuera de la pantalla, me encanta aprender nuevos idiomas y ser un gran padre de familia. Siempre estoy en busca de nuevas fuentes de inspiración y desafíos, tanto en la vida como en el desarrollo.
             </p>
           </div>
         </div>

@@ -1,0 +1,198 @@
+
+.contact-section {
+    padding: 100px 20px;
+    background-color: #f8f8f8; /* Fondo suave, similar a la sección de proyectos */
+    color: #333;
+    font-family: var(--font-body);
+    text-align: center; /* Centra el contenido general */
+}
+
+.contact-container {
+    max-width: 800px; /* Un ancho máximo para el contenido de contacto */
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.8em;
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: var(--font-body); /* REEMPLAZA ESTO */
+}
+
+.contact-intro-message {
+    font-size: 1.15em;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 600px; /* Limita el ancho del párrafo para mejor lectura */
+    margin-left: auto;
+    margin-right: auto;
+    color: #555;
+}
+
+/* Estilos del Formulario */
+.form-wrapper {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+    text-align: left; /* Alinea el contenido del formulario a la izquierda */
+}
+
+.form-wrapper h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center; /* Centra el título del formulario */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--font-body); /* REEMPLAZA ESTO */
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff4500; /* Borde de acento al enfocar */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.2); /* Sombra de enfoque */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Reutilizar estilos de botones del portafolio, ajustando el ancho si es necesario */
+.contact-form .primary-button {
+    width: 100%; /* Botón de enviar ocupa todo el ancho */
+    padding: 15px 25px;
+    font-size: 1.1em;
+}
+
+/* Otras Formas de Contacto */
+.other-contact-options h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-family: var(--font-body); /* REEMPLAZA ESTO */
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra los elementos */
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.contact-item i {
+    color: #ff4500; /* Color de acento para los íconos */
+    margin-right: 15px;
+    font-size: 1.4em;
+    width: 30px; /* Ancho fijo para alinear íconos */
+    text-align: center;
+}
+
+.contact-item a {
+    color: #ff4500; /* Color de acento para los enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #cc3700; /* Tono más oscuro al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 80px 15px;
+    }
+
+    .section-title {
+        font-size: 2.2em;
+    }
+
+    .contact-intro-message {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .form-wrapper h3 {
+        font-size: 1.4em;
+        margin-bottom: 25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form .primary-button {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    .other-contact-options h3 {
+        font-size: 1.4em;
+        margin-bottom: 25px;
+    }
+
+    .contact-item {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .contact-item i {
+        font-size: 1.2em;
+    }
+}
+
+/* Estilos para mensajes de estado */
+.status-message {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.status-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

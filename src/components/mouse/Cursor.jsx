@@ -1,5 +1,6 @@
 import "../mouse/Cursor.css"
 import React, {useEffect, useRef} from "react";
+import {IconPointer} from '@tabler/icons-react'
 
 function Cursor() {
     const customCursorRef = useRef(null);
@@ -20,7 +21,7 @@ function Cursor() {
 
 
     return (
-      <div ref={customCursorRef} className="custom-cursor"></div>
+      <div ref={customCursorRef} className="custom-cursor"><IconPointer color="#DF3F1F" /></div>
     )
   }
   

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import img from "../../assets/logo-svg-ev.svg"
 import './ContainerApp.css'
@@ -7,7 +6,9 @@ import Avatar from '../avatar/Avatar.jsx';
 import PillNav from '../pillNav/PillNav'
 
 
+
 import Button from '../button/Button.jsx';
+import ContactIcons from '../contactIcons/ContactIcons.jsx';
 
 function ContainerApp() {
   const navigate = useNavigate();;
@@ -94,18 +95,17 @@ function ContainerApp() {
                 text="Contactarme"
                 variant="secondary"
                 customPadding= "1rem 2.5rem"
-                onClick={() => console.log('Contactarme clicked')}
+                onClick={() => navigate('/contact')}
               />
             </div>
+
+            <div className='contact-icons-wrapper'>
+              <ContactIcons />
+            </div>
+            
           </div>
 
         </div>
-
-     {/*<section className='header-bigtext-img'>
-        </section>
-  
-        <section className='proyects-container'>
-        </section>*/}
 
         <footer className='container-footer'>{/* creamos la seccion del footer */}
 

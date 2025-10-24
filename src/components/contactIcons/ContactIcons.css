@@ -1,0 +1,11 @@
+
+
+.contact-icon-link{
+    margin: 0.5rem;
+    cursor: none;
+}
+
+.contact-icon-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
