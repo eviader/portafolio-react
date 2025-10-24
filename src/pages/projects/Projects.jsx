@@ -1,5 +1,3 @@
-
-import React from 'react';
 import './Projects.css'; // Importamos los estilos
 import { projects } from '../projects/data/projectsData'; // Importamos los datos de los proyectos
 import ProjectCard from './ProjectsCard'; // Importamos el componente de la tarjeta

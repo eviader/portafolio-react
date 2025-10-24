@@ -23,7 +23,7 @@
        Cada columna tendrá un mínimo de 300px y se expandirá hasta ocupar 1 fracción del espacio disponible. */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px; /* Espacio entre las tarjetas */
-    max-width: 1200px; /* Ancho máximo de la grilla */
+    max-width: 600px; /* Ancho máximo de la grilla */
     margin: 0 auto; /* Centrar la grilla */
     padding: 0 20px; /* Pequeño padding lateral para la grilla en pantallas grandes */
 }
