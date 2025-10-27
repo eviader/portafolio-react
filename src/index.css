@@ -2,7 +2,10 @@
 
 :root {
   background-color: #F8F8F8;
-
+  --red-color: #DF3F1F;
+  --black-color: #212322;
+  --white-color: #F8F8F8;
+  
   /* Typography System */
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;

@@ -1,4 +1,5 @@
 import './ContactIcons.css'
+import { colors } from '../../Colors.js';
 import { IconBrandInstagram, IconBrandGithub, IconMailCode } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,19 +9,19 @@ function ContactIcons({ text, link }) {
     const socialLinks = [
         {
             name: 'Email',
-            icon: <IconMailCode size={28} color='#DF3F1F'/>,
+            icon: <IconMailCode size={28} color={ colors.black }/>,
             url: '/contact',
             isInternal: true
         },
         {
             name: 'GitHub',
-            icon: <IconBrandGithub size={28} color='#DF3F1F' />,
+            icon: <IconBrandGithub size={28} color={ colors.black } />,
             url: 'https://github.com/eviader',
             isInternal: false
         },
         {
             name: 'Instagram',
-            icon: <IconBrandInstagram size={28} color='#DF3F1F'/>,
+            icon: <IconBrandInstagram size={28} color={ colors.black }/>,
             url: 'https://instagram.com/viaderemanuel',
             isInternal: false
         }
