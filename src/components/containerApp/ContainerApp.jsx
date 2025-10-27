@@ -99,16 +99,16 @@ function ContainerApp() {
               />
             </div>
 
-            <div className='contact-icons-wrapper'>
-              <ContactIcons />
-            </div>
+           
             
           </div>
 
         </div>
 
         <footer className='container-footer'>{/* creamos la seccion del footer */}
-
+            <div className='contact-icons-wrapper'>
+              <ContactIcons />
+            </div>
 
         </footer>
 

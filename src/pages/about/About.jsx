@@ -47,7 +47,7 @@ const About = () => {
           {/* Columna Izquierda: Imagen y Breve Declaración */}
           <div className="about-image-content">
             <img src={emaProfilePic} alt="Ema Profile" className="profile-pic" />
-            <h3 className="about-statement">¡Un junior con ganas de darlo todo!</h3>
+            <h3 className="about-statement">¡<>EMA</>!</h3>
           </div>
 
           {/* Columna Derecha: Texto Principal y Habilidades */}
