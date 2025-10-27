@@ -77,7 +77,7 @@ function Contact() {
                 <div className="contact-container">
                     <h2 className="section-title">HABLEMOS</h2>
                     <p className="contact-intro-message">
-                        ¡Me encantaría conocer tu proyecto! Si tienes una idea, una oportunidad de colaboración o simplemente quieres saludar, no dudes en contactarme. Siempre estoy abierta a nuevas y emocionantes propuestas.
+                        ¡Me encantaría conocer tu proyecto! Si tienes una idea, una oportunidad de colaboración o simplemente quieres saludar, no dudes en contactarme. Siempre estoy abierto a nuevas y emocionantes propuestas.
                     </p>
 
                     {/* Formulario de Contacto */}
@@ -133,7 +133,7 @@ function Contact() {
                         </div>
                         <div className="contact-item">
                             <i className="fas fa-phone"></i>
-                            <span>+34 678 901 234</span> {/* Puedes eliminarlo si no quieres tu teléfono */}
+                            <span>+54 (341) 6800654</span> {/* Puedes eliminarlo si no quieres tu teléfono */}
                         </div>
                         <div className="contact-item">
                             <i className="fab fa-linkedin"></i>
@@ -149,7 +149,7 @@ function Contact() {
                         </div>
                         <div className="contact-item">
                             <i className="fas fa-map-marker-alt"></i>
-                            <span>Buenos Aires, Argentina (Remoto)</span>
+                            <span>Rosario, Santa Fe, Argentina (Remoto)</span>
                         </div>
                     </div>
                 </div>

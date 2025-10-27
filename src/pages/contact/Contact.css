@@ -17,7 +17,7 @@
     color: #222;
     margin-bottom: 20px;
     font-weight: 700;
-    font-family: var(--font-body); /* REEMPLAZA ESTO */
+    font-family: var(--font-body);
 }
 
 .contact-intro-message {
@@ -57,7 +57,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1em;
-    font-family: var(--font-body); /* REEMPLAZA ESTO */
+    font-family: var(--font-body);
     color: #333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -86,15 +86,13 @@
     color: #333;
     margin-bottom: 30px;
     font-weight: 600;
-    font-family: var(--font-body); /* REEMPLAZA ESTO */
+    font-family: var(--font-body);
     text-align: center;
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra los elementos */
-    margin-bottom: 15px;
+    text-align: center;/* Centra los elementos */
+    margin-bottom: 3px;
     font-size: 1.1em;
     color: #555;
 }
