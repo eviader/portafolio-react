@@ -191,7 +191,7 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) pa
 
 **Emanuel Viader**
 - GitHub: [@emaviader](https://github.com/emaviader)
-- Portfolio: [Tu URL de portafolio]
+- Portfolio: www.emanuelviader.com
 
 ---
 
