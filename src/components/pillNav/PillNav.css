@@ -50,6 +50,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  cursor: none;
 }
 
 .pill-logo img {
@@ -57,6 +58,7 @@
   height: 200%;
   object-fit: cover;
   display: block;
+  cursor: none;
 }
 
 .pill-list {
@@ -175,7 +177,7 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  cursor: pointer;
+  cursor: none;
   padding: 0;
   position: relative;
 }
@@ -222,7 +224,7 @@
   display: block;
   padding: 12px 16px;
   color: var(--pill-text, #fff);
-  background-color: var(#000);
+  background-color: var(--black-color);
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -231,7 +233,7 @@
 }
 
 .mobile-menu-popover .mobile-menu-link:hover {
-  cursor: pointer;
+  cursor: none;
   background-color: var(--base);
   color: var(--hover-text, #fff);
 }

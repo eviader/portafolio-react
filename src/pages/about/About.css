@@ -115,7 +115,7 @@
 .intro-paragraph {
     font-size: var(--text-lg);
     margin-bottom: 35px;
-    color: #3a3a3a;
+    color: var(--black-color);
     line-height: var(--leading-relaxed);
     font-weight: var(--font-normal);
 }

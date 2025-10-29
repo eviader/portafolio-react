@@ -1,6 +1,6 @@
 import './About.css';
 import PillNav from '../../components/pillNav/PillNav';
-import img from '../../assets/logo-svg-ev.svg'; 
+import img from '../../assets/logo-svg-ev.svg';
 import emaProfilePic from '../../assets/perfil-about.webp';
 
 const About = () => {
@@ -55,13 +55,13 @@ const About = () => {
             <h2 className="section-title">Sobre Mí</h2>
 
             <p className="intro-paragraph">
-              Hola, soy Emanuel Viader, un desarrollador Front-End Junior apasionado por la tecnología, el diseño y las soluciones que hacen más simple la vida de las personas. Siempre me gustó entender cómo funcionan las cosas y encontrar la forma de mejorarlas, y ese mismo impulso fue el que me llevó al mundo del desarrollo web.
+              Hola, soy Emanuel Viader, un desarrollador apasionado por la tecnología, el diseño y las soluciones que hacen más simple la vida de las personas.
 
-              Durante varios años trabajo como Store Manager en Lacoste, donde aprendí el valor del detalle, la organización y la comunicación efectiva dentro de un equipo. Esa experiencia me enseñó que detrás de cada proyecto hay personas, y que la empatía y la constancia son tan importantes como el conocimiento técnico.
+              Mi impulso siempre fue entender cómo funcionan las cosas para poder mejorarlas, y eso me llevó al mundo del desarrollo web. Durante varios años trabajé como Store Manager en Lacoste, donde aprendí el valor del detalle, la organización y la comunicación efectiva dentro de un equipo.
 
-              Hoy estoy enfocado en seguir creciendo como desarrollador, perfeccionando mis habilidades y buscando una oportunidad para aportar valor real. Me motiva crear productos que no solo funcionen bien, sino que transmitan algo —claridad, estética y propósito—.
+              Esa experiencia me enseñó que la empatía y la constancia son tan importantes como el conocimiento técnico. Hoy, estoy enfocado en seguir creciendo como desarrollador, perfeccionando mis habilidades y buscando una oportunidad para aportar valor real. Me motiva crear productos que no solo sean funcionales, sino que transmitan claridad, estética y propósito.
 
-              Soy una persona curiosa, detallista y comprometida. Disfruto aprender, trabajar en equipo y asumir nuevos desafíos que me saquen de la zona de confort.
+              Soy una persona curiosa, detallista y comprometida. Disfruto aprender, trabajar en equipo y asumir nuevos desafíos.
             </p>
 
             <h3>Mi Trayectoria & Pasión</h3>
