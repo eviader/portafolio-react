@@ -224,7 +224,7 @@
   display: block;
   padding: 12px 16px;
   color: var(--pill-text, #fff);
-  background-color: var(--black-color);
+  background-color: var(#fff);
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
