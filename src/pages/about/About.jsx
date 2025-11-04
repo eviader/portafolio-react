@@ -1,52 +1,16 @@
 import './About.css';
-import PillNav from '../../components/pillNav/PillNav';
-import img from '../../assets/logo-svg-ev.svg';
 import emaProfilePic from '../../assets/perfil-about.webp';
+import { skills } from '../../constants/skills';
 
 const About = () => {
 
-  const skills = [
-    'React',
-    'JavaScript',
-    'HTML5',
-    'CSS3',
-    'Figma',
-    'Prototipado',
-    'UX Research',
-    'Git',
-    'GitHub',
-    'Python',
-    'FastApi',
-    'Firebase',
-    'NodeJS'
-  ];
-
   return (
     <>
-      <nav className='navbar'>
-        <PillNav
-          logo={img}
-          logoAlt="Company Logo"
-          items={[
-            { label: 'Inicio', href: '/' },
-            { label: 'Sobre mí', href: '/about' },
-            { label: 'Proyectos', href: '/projects' },
-            { label: 'Contacto', href: '/contact' }
-          ]}
-          activeHref="/"
-          className="custom-nav"
-          ease="power2.easeOut"
-          baseColor="transparent"
-          pillColor="transparent"
-          hoveredPillTextColor="#DF3F1F"
-          pillTextColor="#000000"
-        />
-      </nav>
       <section id="about" className="about-section">
         <div className="about-container">
           {/* Columna Izquierda: Imagen y Breve Declaración */}
           <div className="about-image-content">
-            <img src={emaProfilePic} alt="Ema Profile" className="profile-pic" />
+            <img src={emaProfilePic} alt="Foto de perfil de Emanuel Viader, desarrollador web front-end" className="profile-pic" />
             <h3 className="about-statement">¡<>EMA</>!</h3>
           </div>
 

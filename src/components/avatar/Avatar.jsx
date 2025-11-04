@@ -9,7 +9,7 @@ function Avatar() {
     return (
       <>
           <div className="img-container">
-            <img className="img-home-pefil" src={IMG_AVATAR} alt="img-avatar" />
+            <img className="img-home-pefil" src={IMG_AVATAR} alt="Avatar ilustrado de cuerpo completo de Emanuel Viader" />
           </div>
       </>
     )

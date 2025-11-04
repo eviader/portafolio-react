@@ -8,7 +8,7 @@ import Button from '../../components/button/Button';
 const ProjectCard = ({ title, description, imageUrl, tags, liveUrl, sourceUrl }) => {
   return (
     <div className="project-card">
-      <img src={imageUrl} alt={title} className="project-image" />
+      <img src={imageUrl} alt={`Captura de pantalla del proyecto ${title}`} className="project-image" />
       <div className="project-info">
         <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>

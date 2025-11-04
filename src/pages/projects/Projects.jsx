@@ -1,34 +1,11 @@
 import './Projects.css'; // Importamos los estilos
 import { projects } from '../projects/data/projectsData'; // Importamos los datos de los proyectos
 import ProjectCard from './ProjectsCard'; // Importamos el componente de la tarjeta
-import PillNav from '../../components/pillNav/PillNav';
-import img from '../../assets/logo-svg-ev.svg'; // Asegúrate de tener un logo en esta ruta
 
 const Projects = () => {
 
   return (
-  <>  
-
-      <nav className='navbar'> {/* creamos el navbar */}
-            <PillNav
-              logo={img}
-              logoAlt="Company Logo"
-              items={[
-               { label: 'Inicio', href: '/' },
-                { label: 'Sobre mí', href: '/about' },
-                { label: 'Proyectos', href: '/projects' },
-                { label: 'Contacto', href: '/contact' }
-              ]}
-              activeHref="/"
-              className="custom-nav"
-              ease="power2.easeOut"
-              baseColor="transparent"
-              pillColor="transparent"
-              hoveredPillTextColor="#DF3F1F"
-              pillTextColor="#000000"
-            />
-        </nav>
-    
+    <>
       <section id="projects" className="projects-section">
         <h2 className="section-title">Mis Proyectos </h2>
         <div className="projects-grid">

@@ -1,14 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import img from "../../assets/logo-svg-ev.svg"
 import './ContainerApp.css'
 import BigTextHome from '../bigTextHome/BigTextHome';
 import Avatar from '../avatar/Avatar.jsx';
-import PillNav from '../pillNav/PillNav'
-
-
-
 import Button from '../button/Button.jsx';
 import ContactIcons from '../contactIcons/ContactIcons.jsx';
+import PillNav from '../pillNav/PillNav';
+import img from '../../assets/logo-svg-ev.svg';
 
 function ContainerApp() {
   const navigate = useNavigate();;
@@ -20,11 +17,11 @@ function ContainerApp() {
   return (
     <>
       <main className='container-main'> {/* maquetamos la web */}
-        
+
         <nav className='navbar'> {/* creamos el navbar */}
             <PillNav
               logo={img}
-              logoAlt="Company Logo"
+              logoAlt="Logo de Emanuel Viader - Desarrollador Web"
               items={[
                 { label: 'Inicio', href: '/' },
                 { label: 'Sobre mí', href: '/about' },

@@ -1,9 +1,10 @@
 import ContainerApp from './components/containerApp/ContainerApp.jsx'
 import ClickSpark from './components/mouse/cliclSpark/ClickSpark.jsx';
 import MetaBalls from './components/metaBalls/MetaBalls.jsx';
+import Layout from './components/layout/Layout.jsx';
 import Projects from './pages/projects/Projects.jsx';
 import About from './pages/about/About.jsx';
-import Contact from './pages/contact/Contact.jsx';  
+import Contact from './pages/contact/Contact.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 
@@ -26,53 +27,22 @@ function App() {
       </div>
 
       <BrowserRouter>
-        <Routes>
-        <Route path='/' element={
-          <ClickSpark
+        <ClickSpark
           sparkColor='#EB2800'
           sparkSize={8}
           sparkRadius={15}
           sparkCount={8}
           duration={400}
-          >
-          <ContainerApp />
-          </ClickSpark>
-        } />
-        <Route path='/about' element={
-          <ClickSpark
-          sparkColor='#EB2800'
-          sparkSize={8}
-          sparkRadius={15}
-          sparkCount={8}
-          duration={400}
-          >
-          <About />
-          </ClickSpark>
-        } />
-        <Route path='/projects' element={
-          <ClickSpark
-          sparkColor='#EB2800'
-          sparkSize={8}
-          sparkRadius={15}
-          sparkCount={8}
-          duration={400}
-          >
-          <Projects />
-          </ClickSpark>
-        } />
-        <Route path='/contact' element={
-          <ClickSpark
-          sparkColor='#EB2800'
-          sparkSize={8}
-          sparkRadius={15}
-          sparkCount={8}
-          duration={400}
-          >
-          <Contact />
-          </ClickSpark>
-        } />
-        </Routes>
-        
+        >
+          <Layout>
+            <Routes>
+              <Route path='/' element={<ContainerApp />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/contact' element={<Contact />} />
+            </Routes>
+          </Layout>
+        </ClickSpark>
       </BrowserRouter>
 
     </>

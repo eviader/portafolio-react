@@ -1,6 +1,4 @@
 import './Contact.css';
-import PillNav from '../../components/pillNav/PillNav';
-import img from '../../assets/logo-svg-ev.svg';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -54,25 +52,6 @@ function Contact() {
 
     return (
         <>
-            <nav className='navbar'>
-                <PillNav
-                    logo={img}
-                    logoAlt="Company Logo"
-                    items={[
-                        { label: 'Inicio', href: '/' },
-                        { label: 'Sobre mí', href: '/about' },
-                        { label: 'Proyectos', href: '/projects' },
-                        { label: 'Contacto', href: '/contact' }
-                    ]}
-                    activeHref="/"
-                    className="custom-nav"
-                    ease="power2.easeOut"
-                    baseColor="transparent"
-                    pillColor="transparent"
-                    hoveredPillTextColor="#DF3F1F"
-                    pillTextColor="#000000"
-                />
-            </nav>
             <section id="contact" className="contact-section">
                 <div className="contact-container">
                     <h2 className="section-title">HABLEMOS</h2>
